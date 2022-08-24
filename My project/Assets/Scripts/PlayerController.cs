@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float movePawor = 5f;
+
+    private Rigidbody m_Rigidbody;
+
+    private void Start()
     {
-        
+        m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //Move
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            m_Rigidbody.AddForce(Vector3.right * movePawor, ForceMode.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            m_Rigidbody.AddForce(Vector3.right * (-1) *movePawor, ForceMode.Impulse);
+        }
     }
 }
