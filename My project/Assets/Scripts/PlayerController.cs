@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movePawor = 5f;
 
-    private Rigidbody m_Rigidbody;
+    private Rigidbody rigidbody;
 
     private void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        rigidbody = this.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        Vector3 tmp = this.transform.position;
         //Move
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            m_Rigidbody.AddForce(Vector3.right * movePawor, ForceMode.Impulse);
+            if(tmp.z != -1.0){
+                this.transform.position += new Vector3(0, 0, -1.0f);
+            }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            m_Rigidbody.AddForce(Vector3.right * (-1) *movePawor, ForceMode.Impulse);
+            if(tmp.z != 1.0){
+                this.transform.position += new Vector3(0, 0, 1.0f);
+            }
         }
     }
 }
