@@ -73,7 +73,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 2 by 3
+  m_LastLoadedLayoutName: 
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 144
+  controlID: 17
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 204
+  controlID: 112
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 429
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -243,7 +243,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 908
-    height: 486
+    height: 487
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -267,9 +267,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 486
+    y: 487
     width: 908
-    height: 461
+    height: 460
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
@@ -310,7 +310,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: cce8ffff34fbffff
+      m_ExpandedIDs: b6afffff38fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -416,22 +416,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/RPG Monster Duo PBR Polyart/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/RPG Monster Duo PBR Polyart/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\kawas\Desktop\uniba\otasuketai-game\My project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 306f0000
-    m_LastClickedID: 28464
-    m_ExpandedIDs: 00000000fa6d000000ca9a3bffffff7f
+    m_SelectedIDs: b8670000
+    m_LastClickedID: 26552
+    m_ExpandedIDs: 00000000985a00003868000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,7 +459,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa6d000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000985a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 559
+    y: 560
     width: 907
-    height: 440
+    height: 439
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 907, y: 419}
+  m_TargetSize: {x: 907, y: 418}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -566,8 +566,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -453.5
     m_HBaseRangeMax: 453.5
-    m_VBaseRangeMin: -209.5
-    m_VBaseRangeMax: 209.5
+    m_VBaseRangeMin: -209
+    m_VBaseRangeMax: 209
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -586,9 +586,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 907
-      height: 419
+      height: 418
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 453.5, y: 209.5}
+    m_Translation: {x: 453.5, y: 209}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -596,12 +596,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -453.5
-      y: -209.5
+      y: -209
       width: 907
-      height: 419
+      height: 418
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 907, y: 440}
+  m_LastWindowPixelSize: {x: 907, y: 439}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -630,7 +630,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 907
-    height: 465
+    height: 466
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -684,7 +684,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -832,9 +832,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.8880081, y: 2.7355928, z: -4.287897}
+    m_Target: {x: 3.2448215, y: -7.765327, z: -1.8423843}
     speed: 2
-    m_Value: {x: 1.8880081, y: 2.7355928, z: -4.287897}
+    m_Value: {x: 3.2448215, y: -7.765327, z: -1.8423843}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -881,13 +881,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.09334953, y: 0.8805689, z: -0.19488809, w: -0.421784}
+    m_Target: {x: -0.14276046, y: 0.74658245, z: -0.1699394, w: -0.62717986}
     speed: 2
-    m_Value: {x: -0.09334958, y: 0.8805694, z: -0.19488819, w: -0.42178425}
+    m_Value: {x: -0.14276047, y: 0.7465825, z: -0.16993941, w: -0.6271799}
   m_Size:
-    m_Target: 6.1451497
+    m_Target: 11.570383
     speed: 2
-    m_Value: 6.1451497
+    m_Value: 11.570383
   m_Ortho:
     m_Target: 0
     speed: 2

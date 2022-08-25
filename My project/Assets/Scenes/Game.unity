@@ -286,9 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0103ff73c37645ba127dcd0019682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy:
-  - {fileID: 1090219386143568, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
-  - {fileID: 1837317425425208, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
+  enemy: {fileID: 1090219386143568, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
   speed: 10
 --- !u!1 &925298672
 GameObject:
