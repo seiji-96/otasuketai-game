@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private Rigidbody rigidbody;
+    private Rigidbody rbody;
 
     private void Start()
     {
-        rigidbody = this.GetComponent<Rigidbody>();
+        rbody = this.GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -18,15 +18,11 @@ public class PlayerController : MonoBehaviour
         //Move
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(tmp.z != -1.0){
-                this.transform.position += new Vector3(0, 0, -1.0f);
-            }
+            rbody.velocity = new Vector3(0, 0, -3.0f);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(tmp.z != 1.0){
-                this.transform.position += new Vector3(0, 0, 1.0f);
-            }
+            rbody.velocity = new Vector3(0, 0, 3.0f);
         }
     }
 }
