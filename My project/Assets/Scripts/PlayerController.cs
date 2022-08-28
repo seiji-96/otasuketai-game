@@ -18,11 +18,15 @@ public class PlayerController : MonoBehaviour
         //Move
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            rbody.velocity = new Vector3(0, 0, -3.0f);
+            if(tmp.z != -1.0){
+                this.transform.position += new Vector3(0, 0, -0.5f);
+            }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            rbody.velocity = new Vector3(0, 0, 3.0f);
+            if(tmp.z != 1.0){
+                this.transform.position += new Vector3(0, 0, 0.5f);
+            }
         }
     }
 }
