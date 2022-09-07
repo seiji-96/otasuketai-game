@@ -19,7 +19,7 @@ public class PlaneScript : MonoBehaviour
 
     private float score = 0;
     private int intScore = 0;
-    private int bestScore;
+    private static int bestScore;
 
     public Text scoreText;
     public Text bestText;
@@ -49,7 +49,6 @@ public class PlaneScript : MonoBehaviour
             }
             score += Time.deltaTime * 10;
             intScore = (int)score;
-            bestScore = intScore;
             scoreText.text = intScore.ToString();
             if(intScore>=bestScore)
             {
