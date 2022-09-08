@@ -19,8 +19,10 @@ public class PlaneScript : MonoBehaviour
 
     private float score = 0;
     private int intScore = 0;
+    private static int bestScore;
 
     public Text scoreText;
+    public Text bestText;
     
     
     void Start()
@@ -48,6 +50,11 @@ public class PlaneScript : MonoBehaviour
             score += Time.deltaTime * 10;
             intScore = (int)score;
             scoreText.text = intScore.ToString();
+            if(intScore>=bestScore)
+            {
+                bestScore = intScore;
+            }
+            bestText.text = $"Best Score : {bestScore}.";
         }
     }
 }

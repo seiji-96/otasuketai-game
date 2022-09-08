@@ -16,13 +16,16 @@ public class Enemyspawn : MonoBehaviour
     public float zMaxPosition = 3f;
 
     public float speed = -10f;
-    private float disappear = -10;
+    private float disappear = -3;
+
+    private float posCount;
  
     // Start is called before the first frame update
     void Start()
     {
         //時間間隔を決定する
-        interval = 3f;
+        interval = 1f;
+        time = -3f;
     }
  
     // Update is called once per frame
@@ -32,17 +35,22 @@ public class Enemyspawn : MonoBehaviour
         time += Time.deltaTime;
  
         //経過時間が生成時間になったとき(生成時間より大きくなったとき)
-        if(time > interval)
+        if(time > interval - Time.deltaTime)
         {
             //enemyをインスタンス化する(生成する)
-            GameObject enemy = Instantiate(enemyPrefab);
-            //生成した敵の位置をランダムに設定する
-            enemy.transform.position = GetRandomPosition();
-            Rigidbody rg = enemy.GetComponent<Rigidbody>();
-            if (enemy.gameObject.transform.position.x < disappear)
-            {
-                Destroy(enemy);
-            }
+            for (int i=0; i<2; i++){
+                GameObject enemy = Instantiate(enemyPrefab);
+                Enemy e = enemy.GetComponent<Enemy>();
+                e.speed = 10;
+                //生成した敵の位置をランダムに設定する
+                enemy.transform.position = GetRandomPosition();
+                Rigidbody rg = enemy.GetComponent<Rigidbody>();
+                if (enemy.gameObject.transform.position.x < disappear || posCount == enemy.gameObject.transform.position.z)
+                {
+                    Destroy(enemy);
+                }
+                posCount = enemy.gameObject.transform.position.z;
+            } 
             //経過時間を初期化して再度時間計測を始める
             time = 0f;
         }
