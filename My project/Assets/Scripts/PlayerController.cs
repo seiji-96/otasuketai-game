@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
+            this.enabled = false;
         }
     }
 }
