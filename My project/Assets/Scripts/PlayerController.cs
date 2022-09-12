@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rbody;
     public Canvas canvas;
     private Vector3 pos;
-    private bool inMove = false;
+    public bool inMove = false;
 
     private void Start()
     {
@@ -23,18 +23,30 @@ public class PlayerController : MonoBehaviour
         //Move
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(tmp.z != -1.0 && !inMove)
+            if(tmp.z <= 1.2f && !inMove && tmp.z >= 0.8f)
             {
                 inMove = true;
-                StartCoroutine("MoveRight");          
+                StartCoroutine("MoveRight");         
+            }
+
+            if(tmp.z <= 0.2f && tmp.z >= -0.2f && !inMove)
+            {
+                inMove = true;
+                StartCoroutine("MoveRight");       
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(tmp.z != 1.0 && !inMove)
+            if(tmp.z >= -1.2f && tmp.z <= -0.8f && !inMove)
             {
                 inMove = true;
-                StartCoroutine("MoveLeft");          
+                StartCoroutine("MoveLeft");         
+            }
+
+            if(tmp.z <= 0.2f && tmp.z >= -0.2f && !inMove)
+            {
+                inMove = true;
+                StartCoroutine("MoveLeft");        
             }
         }
     }
@@ -51,23 +63,21 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator MoveLeft()
     {
-        for(int i=0; i<10; i++)
+        for(int i=0; i<5; i++)
         {
-            transform.Translate(0, 0, 0.1f);
+            transform.Translate(0, 0, 0.2f);
             yield return new WaitForSeconds(0.01f);
         }
-
         inMove = false;
     }
 
     IEnumerator MoveRight()
     {
-        for(int i=0; i<10; i++)
+        for(int i=0; i<5; i++)
         {
-            transform.Translate(0, 0, -0.1f);
+            transform.Translate(0, 0, -0.2f);
             yield return new WaitForSeconds(0.01f);
         }
-
         inMove = false;
     }
 
