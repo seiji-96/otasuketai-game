@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = 1.000001f * speed;
         this.transform.position = new Vector3(this.transform.position.x-speed*Time.deltaTime, this.transform.position.y, this.transform.position.z);
         if (this.transform.position.x < disappear){
             Destroy(this.gameObject);
