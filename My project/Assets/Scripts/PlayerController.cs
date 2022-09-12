@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rbody;
     public Canvas canvas;
+    private Vector3 pos;
+    private bool inMove = false;
 
     private void Start()
     {
@@ -21,14 +23,18 @@ public class PlayerController : MonoBehaviour
         //Move
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(tmp.z != -1.0){
-                this.transform.position += new Vector3(0, 0, -1.0f);
+            if(tmp.z != -1.0 && !inMove)
+            {
+                inMove = true;
+                StartCoroutine("MoveRight");          
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(tmp.z != 1.0){
-                this.transform.position += new Vector3(0, 0, 1.0f);
+            if(tmp.z != 1.0 && !inMove)
+            {
+                inMove = true;
+                StartCoroutine("MoveLeft");          
             }
         }
     }
@@ -39,6 +45,30 @@ public class PlayerController : MonoBehaviour
         {
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
+            this.enabled = false;
         }
     }
+
+    IEnumerator MoveLeft()
+    {
+        for(int i=0; i<10; i++)
+        {
+            transform.Translate(0, 0, 0.1f);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        inMove = false;
+    }
+
+    IEnumerator MoveRight()
+    {
+        for(int i=0; i<10; i++)
+        {
+            transform.Translate(0, 0, -0.1f);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        inMove = false;
+    }
+
 }

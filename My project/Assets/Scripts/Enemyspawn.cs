@@ -16,7 +16,6 @@ public class Enemyspawn : MonoBehaviour
     public float zMaxPosition = 3f;
 
     public float speed = -10f;
-    private float disappear = -3;
 
     private float posCount;
  
@@ -45,10 +44,7 @@ public class Enemyspawn : MonoBehaviour
                 //生成した敵の位置をランダムに設定する
                 enemy.transform.position = GetRandomPosition();
                 Rigidbody rg = enemy.GetComponent<Rigidbody>();
-                if (enemy.gameObject.transform.position.x < disappear || posCount == enemy.gameObject.transform.position.z)
-                {
-                    Destroy(enemy);
-                }
+                
                 posCount = enemy.gameObject.transform.position.z;
             } 
             //経過時間を初期化して再度時間計測を始める

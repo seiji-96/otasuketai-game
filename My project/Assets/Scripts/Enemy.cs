@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
+    private float disappear = -3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         this.transform.position = new Vector3(this.transform.position.x-speed*Time.deltaTime, this.transform.position.y, this.transform.position.z);
+        if (this.transform.position.x < disappear){
+            Destroy(this.gameObject);
+        }
     }
 
 }
