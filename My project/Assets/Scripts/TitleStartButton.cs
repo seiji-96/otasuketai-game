@@ -17,12 +17,7 @@ public class TitleStartButton : MonoBehaviour
         
     }
 
-    public void StartClick()
-    {
-        Invoke("StartGame", 1.5f);
-    }
-
-    void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("Game");
     }
