@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlaneScript : MonoBehaviour
 {
@@ -21,8 +22,8 @@ public class PlaneScript : MonoBehaviour
     private int intScore = 0;
     private static int bestScore;
 
-    public Text scoreText;
-    public Text bestText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI bestText;
     
     
     void Start()
@@ -35,7 +36,7 @@ public class PlaneScript : MonoBehaviour
         }
     }
     
-    void Update()
+    void FixedUpdate()
     {
         if (timerScript.totalTime<=0)
         {
