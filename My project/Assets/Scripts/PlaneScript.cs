@@ -28,6 +28,7 @@ public class PlaneScript : MonoBehaviour
     
     void Start()
     {
+        bestScore = PlayerPrefs.GetInt("BESTSCORE", 0);
         timerObject = GameObject.Find("GameObject");
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
@@ -56,6 +57,7 @@ public class PlaneScript : MonoBehaviour
             {
                 bestScore = intScore;
             }
+            PlayerPrefs.SetInt("BESTSCORE", bestScore);
             bestText.text = $"Best Score : {bestScore}.";
         }
     }

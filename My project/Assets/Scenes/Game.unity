@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 796705461}
   - component: {fileID: 796705460}
   - component: {fileID: 796705462}
+  - component: {fileID: 796705463}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -506,6 +507,22 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1090219386143568, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
   zMinPosition: 0
   zMaxPosition: 3
+  speed: 10
+--- !u!114 &796705463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796705459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ba351be3f5b4df58ed79428e2a33cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage:
+  - {fileID: 1345651076695995216, guid: 642454a265967e1468360a08fc66db60, type: 3}
+  - {fileID: 3889334168561990669, guid: 01613cb038ee177459c00820f1ea9206, type: 3}
   speed: 10
 --- !u!1 &864660869
 GameObject:
