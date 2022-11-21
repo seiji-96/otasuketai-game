@@ -15,7 +15,7 @@ D:/GitHub/otasuketai-game/My project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59164
+53385
 Successfully changed project path to: D:/GitHub/otasuketai-game/My project
 D:/GitHub/otasuketai-game/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/GitHub/otasuketai-game/My project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 69.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 67.89 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -63,14 +63,14 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56020
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006152 seconds.
+Registered in 0.006410 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
@@ -78,39 +78,39 @@ Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 69.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 68.35 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.560 seconds
+- Completed reload, in  0.572 seconds
 Domain Reload Profiling:
-	ReloadAssembly (560ms)
-		BeginReloadAssembly (60ms)
+	ReloadAssembly (572ms)
+		BeginReloadAssembly (62ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (405ms)
-			LoadAssemblies (58ms)
+		EndReloadAssembly (408ms)
+			LoadAssemblies (61ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (95ms)
+			SetupTypeCache (94ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (241ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (239ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
+				InitializePlatformSupportModulesInManaged (25ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (69ms)
+				RefreshPlugins (68ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (106ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				ProcessInitializeOnLoadAttributes (105ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003180 seconds.
+Registered in 0.003480 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -118,31 +118,31 @@ Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.885 seconds
+- Completed reload, in  0.887 seconds
 Domain Reload Profiling:
-	ReloadAssembly (885ms)
-		BeginReloadAssembly (93ms)
+	ReloadAssembly (888ms)
+		BeginReloadAssembly (95ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (694ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (690ms)
 			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (233ms)
+			SetupTypeCache (235ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (316ms)
+			SetupLoadedEditorAssemblies (310ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
+				InitializePlatformSupportModulesInManaged (21ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (197ms)
+				ProcessInitializeOnLoadAttributes (189ms)
 				ProcessInitializeOnLoadMethodAttributes (24ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
@@ -151,13 +151,13 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (55.4 KB). Loaded Objects now: 3895.
-Memory consumption went from 121.9 MB to 121.8 MB.
-Total: 2.927900 ms (FindLiveObjects: 0.290100 ms CreateObjectMapping: 0.289700 ms MarkObjects: 2.247700 ms  DeleteObjects: 0.099300 ms)
+Unloading 3432 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (55.3 KB). Loaded Objects now: 3894.
+Memory consumption went from 119.6 MB to 119.6 MB.
+Total: 2.677000 ms (FindLiveObjects: 0.280900 ms CreateObjectMapping: 0.262000 ms MarkObjects: 2.070000 ms  DeleteObjects: 0.063300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -172,293 +172,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 749262.601221 seconds.
-  path: Packages/com.unity.performance.profile-analyzer/package.json
-  artifactKey: Guid(478e38cbe30254f8c868840b4e2f32e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.performance.profile-analyzer/package.json using Guid(478e38cbe30254f8c868840b4e2f32e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a311d5b8c448599d509848ed5332cd71') in 0.035922 seconds 
+  Time since last request: 750081.303885 seconds.
+  path: Assets/Planets of the Solar System 3D/Prefabs/Earth.prefab
+  artifactKey: Guid(300f80108a63f48618cb4a1c8b8c1e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Planets of the Solar System 3D/Prefabs/Earth.prefab using Guid(300f80108a63f48618cb4a1c8b8c1e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '537947d0705bec63376f9c936dfcfcb3') in 0.130919 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.489830 seconds.
-  path: Packages/com.unity.services.core/package.json
-  artifactKey: Guid(182c5bcc97fc21747a9ca5e01da1ed3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.services.core/package.json using Guid(182c5bcc97fc21747a9ca5e01da1ed3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8aaf2f5816003290ee33f3893a41e36e') in 0.021789 seconds 
+  Time since last request: 165.155192 seconds.
+  path: Assets/Spaceship/SpaceshipDiffuse.prefab
+  artifactKey: Guid(81a45116981bb514c866bab4841bb1fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spaceship/SpaceshipDiffuse.prefab using Guid(81a45116981bb514c866bab4841bb1fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a9a93f992bc0fc98ab60843e5585207') in 0.101636 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.442935 seconds.
-  path: Packages/com.unity.settings-manager/package.json
-  artifactKey: Guid(3001f7491ac66e34a9694543d9f8b1ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.settings-manager/package.json using Guid(3001f7491ac66e34a9694543d9f8b1ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b16afbc5e1c81e578532a459c23bac45') in 0.016166 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.487893 seconds.
-  path: Packages/com.unity.test-framework/package.json
-  artifactKey: Guid(d6a2e6e4803de7b43baacdc355fc144d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.test-framework/package.json using Guid(d6a2e6e4803de7b43baacdc355fc144d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e18898ccc8b096ee8f2e6704cc6568de') in 0.007928 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.462819 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets
-  artifactKey: Guid(87cd7003e3ee7414f9b2ea2aa0abd2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets using Guid(87cd7003e3ee7414f9b2ea2aa0abd2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c1133d41071bfb3ed84cc8e632cacef') in 0.004874 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.289602 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien
-  artifactKey: Guid(dc6b4bbf2c273fa45b9484c3431b69c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien using Guid(dc6b4bbf2c273fa45b9484c3431b69c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '062a46d1d17f8ac68aa687680e46507f') in 0.004308 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.105050 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design1.prefab
-  artifactKey: Guid(642454a265967e1468360a08fc66db60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design1.prefab using Guid(642454a265967e1468360a08fc66db60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70b92369745c83392ec5f2c9c8f750ab') in 0.080197 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design7.prefab
-  artifactKey: Guid(25c78cc21647c23429386a333518e7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design7.prefab using Guid(25c78cc21647c23429386a333518e7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a70663370a2d41a0bcda35091198b6db') in 0.126480 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design8.prefab
-  artifactKey: Guid(f91e9915815d0ab40b027481a93b12f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design8.prefab using Guid(f91e9915815d0ab40b027481a93b12f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3db95b79a298e0f53830ac67d21c3bf0') in 0.126422 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design6.prefab
-  artifactKey: Guid(02eb15151ae42e84a96dac13b24bebba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design6.prefab using Guid(02eb15151ae42e84a96dac13b24bebba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76bf795e18c26e5cc620e0b70ba67c7a') in 0.092623 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design4.prefab
-  artifactKey: Guid(f66e22ba9dc51bc4bb5dcd8260363cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Alien/Alien_Design4.prefab using Guid(f66e22ba9dc51bc4bb5dcd8260363cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50ed0dd321a9f35831ebe998f23c795') in 0.036234 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.702359 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Desert/Desert_Design2.prefab
-  artifactKey: Guid(7ded786f373b83b47b63f3a92f180f4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Desert/Desert_Design2.prefab using Guid(7ded786f373b83b47b63f3a92f180f4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e4c4c48e7d84298be0340d93093643') in 0.044029 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Desert/Desert_Design5.prefab
-  artifactKey: Guid(b3a5d11ab20d2cc4dad9237f39ede68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Desert/Desert_Design5.prefab using Guid(b3a5d11ab20d2cc4dad9237f39ede68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64c3814a48686458a3f165e7e2487ab4') in 0.056052 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.808143 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Earth-Like/Earth-Like_Design2.prefab
-  artifactKey: Guid(5d96a9eefbf88da4cb50cebe1010aecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Earth-Like/Earth-Like_Design2.prefab using Guid(5d96a9eefbf88da4cb50cebe1010aecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77ef2223bb815a823105d8fc34c040a2') in 0.202188 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Earth-Like/Earth-Like_Design5.prefab
-  artifactKey: Guid(2aca12bac1558f644b83061be3705ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Earth-Like/Earth-Like_Design5.prefab using Guid(2aca12bac1558f644b83061be3705ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd8e27e7640af1e88e72ad48f06b536') in 0.078945 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Earth-Like/Earth-Like_Design9.prefab
-  artifactKey: Guid(12408eb639a7b70469e50bce4bfcc605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Earth-Like/Earth-Like_Design9.prefab using Guid(12408eb639a7b70469e50bce4bfcc605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '728cade47016d85d0ceafec70a3e2c21') in 0.073286 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003007 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.890 seconds
-Domain Reload Profiling:
-	ReloadAssembly (891ms)
-		BeginReloadAssembly (126ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (681ms)
-			LoadAssemblies (77ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (241ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (286ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (35ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (163ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3413 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 18 unused Assets / (24.7 KB). Loaded Objects now: 3905.
-Memory consumption went from 125.0 MB to 124.9 MB.
-Total: 2.609900 ms (FindLiveObjects: 0.264100 ms CreateObjectMapping: 0.222000 ms MarkObjects: 2.099700 ms  DeleteObjects: 0.023200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 37.977748 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Frozen/Frozen_Design2.prefab
-  artifactKey: Guid(b0a73e76fe755ec4f9ab19fee27984d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Frozen/Frozen_Design2.prefab using Guid(b0a73e76fe755ec4f9ab19fee27984d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3fe3faa6724ba030dd7c58f5fc37970') in 0.162370 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.219838 seconds.
-  path: Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Tundra/Tundra_Design2.prefab
-  artifactKey: Guid(eae9621b053642946945a85587e01aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/#OnePotatoKingdom_FULL/Prefabs/#Planets/Tundra/Tundra_Design2.prefab using Guid(eae9621b053642946945a85587e01aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b4cd07ff802a8de03367a91c2335237') in 0.088192 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002963 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.925 seconds
-Domain Reload Profiling:
-	ReloadAssembly (926ms)
-		BeginReloadAssembly (116ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (31ms)
-		EndReloadAssembly (721ms)
-			LoadAssemblies (77ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (248ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (318ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (32ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (59ms)
-				ProcessInitializeOnLoadAttributes (189ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.47 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3413 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 18 unused Assets / (24.6 KB). Loaded Objects now: 3908.
-Memory consumption went from 125.0 MB to 124.9 MB.
-Total: 5.067700 ms (FindLiveObjects: 0.382100 ms CreateObjectMapping: 0.337400 ms MarkObjects: 4.305700 ms  DeleteObjects: 0.040700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003400 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GitHub\otasuketai-game\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.946 seconds
-Domain Reload Profiling:
-	ReloadAssembly (947ms)
-		BeginReloadAssembly (116ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (743ms)
-			LoadAssemblies (75ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (245ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (335ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (35ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (58ms)
-				ProcessInitializeOnLoadAttributes (192ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.96 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3413 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 18 unused Assets / (24.6 KB). Loaded Objects now: 3911.
-Memory consumption went from 124.9 MB to 124.9 MB.
-Total: 3.615700 ms (FindLiveObjects: 0.406500 ms CreateObjectMapping: 0.442800 ms MarkObjects: 2.731500 ms  DeleteObjects: 0.033500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 4.834748 seconds.
+  path: Assets/Spaceship/Models/Viper.fbx
+  artifactKey: Guid(f3b36b357c4760743ad6ab651571197f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Spaceship/Models/Viper.fbx using Guid(f3b36b357c4760743ad6ab651571197f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00885072172c34f861054e2f12f07441') in 0.055662 seconds 
