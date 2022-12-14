@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.029230887, g: 0.077813216, b: 0.1683422, a: 1}
+  m_IndirectSpecularColor: {r: 0.009786322, g: 0.05188985, b: 0.15229288, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -442,8 +442,8 @@ GameObject:
   m_Component:
   - component: {fileID: 796705461}
   - component: {fileID: 796705460}
-  - component: {fileID: 796705462}
   - component: {fileID: 796705463}
+  - component: {fileID: 796705464}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -492,22 +492,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &796705462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796705459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f0103ff73c37645ba127dcd0019682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 775504298496372804, guid: 7f93d25516ed97d4592fe44cd47dd9e5, type: 3}
-  zMinPosition: 0
-  zMaxPosition: 3
-  speed: 10
 --- !u!114 &796705463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,12 +505,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage:
-  - {fileID: 1345651076695995216, guid: 642454a265967e1468360a08fc66db60, type: 3}
-  - {fileID: 3889334168561990669, guid: 01613cb038ee177459c00820f1ea9206, type: 3}
-  - {fileID: 5816976490401521334, guid: 2aca12bac1558f644b83061be3705ffc, type: 3}
-  - {fileID: 7883240915248694936, guid: ee73cbad720351640a178dff59fe2b69, type: 3}
-  - {fileID: 7516994712803276884, guid: 48d94668fa63cde46a8dc3470035354a, type: 3}
+  - {fileID: 1066320961419670, guid: ec1861462fc1b46f1a1c1c3c0f1f7f15, type: 3}
+  - {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+  - {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
+  - {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
+  - {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+  - {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
+  - {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
   speed: 10
+--- !u!114 &796705464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796705459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c72ed2bb8876a438867bec82a9d864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  zMinPosition: 0
+  zMaxPosition: 3
+  speed: -10
 --- !u!1 &864660869
 GameObject:
   m_ObjectHideFlags: 0

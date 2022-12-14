@@ -8,10 +8,10 @@ public class StarSyori : MonoBehaviour
     private GameObject timerObject;
     StartTimer timerScript;
 
-    GameObject[] step = new GameObject[5];
+    GameObject[] step = new GameObject[8];
 
     public float speed;
-    private float disappear = -2;
+    private float disappear = 10;
     private float respawn = 30;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class StarSyori : MonoBehaviour
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
         {
-            step[i] = Instantiate(stage[i], new Vector3(100 * (i+1) , (-1) * Random.Range(1, 200) , Random.Range(120, 180) * Mathf.Pow(-1, i)), Quaternion.identity);
+            step[i] = Instantiate(stage[i], new Vector3(Random.Range(100, 200) + 100 * i, Random.Range(-150, -10) , Random.Range(120, 180) * Mathf.Pow(-1, i)), Quaternion.identity);
         }
     }
 
@@ -38,13 +38,13 @@ public class StarSyori : MonoBehaviour
         {
             for (int i = 0; i < step.Length; i++)
             {
-                speed = 1.000001f * speed;
                 step[i].gameObject.transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
                 if (step[i].gameObject.transform.position.x < disappear)
                 {
-                    step[i].gameObject.transform.position = new Vector3(100 * (i+1) , (-1) * Random.Range(1, 200) , Random.Range(80, 100) * Mathf.Pow(-1, i));
+                    step[i].gameObject.transform.position = new Vector3(Random.Range(700, 800) + 100 * i ,Random.Range(-150, -10) , Random.Range(80, 100) * Mathf.Pow(-1, i));
                 }
             }
+            speed = 1.000001f * speed;
         }
     }
         

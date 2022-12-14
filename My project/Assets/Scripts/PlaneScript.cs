@@ -43,7 +43,6 @@ public class PlaneScript : MonoBehaviour
         {
             for (int i = 0; i < step.Length; i++)
             {
-                speed = 1.000001f * speed;
                 step[i].gameObject.transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
                 if (step[i].gameObject.transform.position.x < disappear)
                 {
@@ -59,6 +58,7 @@ public class PlaneScript : MonoBehaviour
             }
             PlayerPrefs.SetInt("BESTSCORE", bestScore);
             bestText.text = $"Best Score : {bestScore}.";
+            speed = 1.000001f * speed;
         }
     }
 }
