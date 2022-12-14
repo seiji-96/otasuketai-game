@@ -22,7 +22,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-51315
+57574
 Successfully changed project path to: /Users/takekoushin/Downloads/DownGit/otasuketai-game/My project
 /Users/takekoushin/Downloads/DownGit/otasuketai-game/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -54,7 +54,7 @@ Successfully changed project path to: /Users/takekoushin/Downloads/DownGit/otasu
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 91.02 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 105.00 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -70,81 +70,81 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56604
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007102 seconds.
+Registered in 0.004255 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 88.33 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 76.44 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.880 seconds
+- Completed reload, in  0.845 seconds
 Domain Reload Profiling:
-	ReloadAssembly (881ms)
-		BeginReloadAssembly (156ms)
+	ReloadAssembly (846ms)
+		BeginReloadAssembly (133ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (580ms)
-			LoadAssemblies (159ms)
+		EndReloadAssembly (568ms)
+			LoadAssemblies (134ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (162ms)
+			SetupTypeCache (161ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (317ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (314ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (88ms)
+				RefreshPlugins (76ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (163ms)
-				ProcessInitializeOnLoadMethodAttributes (54ms)
+				ProcessInitializeOnLoadAttributes (170ms)
+				ProcessInitializeOnLoadMethodAttributes (57ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.015294 seconds.
+Registered in 0.009661 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /Users/takekoushin/Downloads/DownGit/otasuketai-game/My project/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/takekoushin/Downloads/DownGit/otasuketai-game/My project/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.349 seconds
+- Completed reload, in  1.267 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1350ms)
-		BeginReloadAssembly (130ms)
+	ReloadAssembly (1268ms)
+		BeginReloadAssembly (119ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (1070ms)
-			LoadAssemblies (146ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (128ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (389ms)
+			SetupTypeCache (380ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (69ms)
-			SetupLoadedEditorAssemblies (421ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (397ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (82ms)
-				ProcessInitializeOnLoadAttributes (290ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (275ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -153,13 +153,13 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launching external process: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3432 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (51.4 KB). Loaded Objects now: 3909.
-Memory consumption went from 252.9 MB to 252.9 MB.
-Total: 7.914487 ms (FindLiveObjects: 0.703317 ms CreateObjectMapping: 0.269309 ms MarkObjects: 6.804437 ms  DeleteObjects: 0.136285 ms)
+Unloading 25 unused Assets / (43.9 KB). Loaded Objects now: 3911.
+Memory consumption went from 253.8 MB to 253.7 MB.
+Total: 3.478155 ms (FindLiveObjects: 0.273664 ms CreateObjectMapping: 0.176537 ms MarkObjects: 2.846037 ms  DeleteObjects: 0.181130 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -173,64 +173,67 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 140454.380287 seconds.
-  path: Assets/Planets of the Solar System 3D/Prefabs/Nebula_01.prefab
-  artifactKey: Guid(00f2918771afc4e07b0a2018e54d57ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Prefabs/Nebula_01.prefab using Guid(00f2918771afc4e07b0a2018e54d57ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fdbd38ce42c27c5472e4f881143353a') in 2.944406 seconds 
+  Time since last request: 27318.844057 seconds.
+  path: Assets/Planets of the Solar System 3D/Materials/URP_Pluto_Lod.mat
+  artifactKey: Guid(811507dbca1de47c08d812bfcf368fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Planets of the Solar System 3D/Materials/URP_Pluto_Lod.mat using Guid(811507dbca1de47c08d812bfcf368fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baec32e4bf26bddb135c7bd5ea34a43a') in 1.229325 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000651 seconds.
-  path: Assets/Planets of the Solar System 3D/Materials/Sun FX.mat
-  artifactKey: Guid(82479439eac344631aaef1977dcaf8eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Materials/Sun FX.mat using Guid(82479439eac344631aaef1977dcaf8eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c2844982a075ee71375ada8659ba97d') in 0.937951 seconds 
+  Time since last request: 487.573361 seconds.
+  path: Assets/rkunuv.psd
+  artifactKey: Guid(b80b6743843e54c56b33f2a5636f75bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rkunuv.psd using Guid(b80b6743843e54c56b33f2a5636f75bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd833f5820aacbc3b422d4a118ed33de2') in 0.348153 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000270 seconds.
-  path: Assets/Planets of the Solar System 3D/Prefabs/Earth.prefab
-  artifactKey: Guid(300f80108a63f48618cb4a1c8b8c1e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Prefabs/Earth.prefab using Guid(300f80108a63f48618cb4a1c8b8c1e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df0d167725e84c5dcbcd73af69e2ade6') in 0.032517 seconds 
+  Time since last request: 27.443401 seconds.
+  path: Assets/rkunuvのコピー.psd
+  artifactKey: Guid(ef34580cb73f04976a409a8dcc965d49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rkunuvのコピー.psd using Guid(ef34580cb73f04976a409a8dcc965d49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0497ac6e099589b0b1e79328ad4df570') in 0.009946 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000109 seconds.
-  path: Assets/Planets of the Solar System 3D/Prefabs/Mercury.prefab
-  artifactKey: Guid(ab152f61198d54532ae39108e616ff59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Prefabs/Mercury.prefab using Guid(ab152f61198d54532ae39108e616ff59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9d2422ace99e812c64177200e06b43d') in 0.039668 seconds 
+  Time since last request: 1671.205907 seconds.
+  path: Assets/Dkun.psd
+  artifactKey: Guid(35d78f1ce2bad49acb54f1b7033af0c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dkun.psd using Guid(35d78f1ce2bad49acb54f1b7033af0c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '294ca482d293682b7d57c2b92f509709') in 0.022381 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000075 seconds.
-  path: Assets/Planets of the Solar System 3D/Materials/URP_Earth_Lod.mat
-  artifactKey: Guid(57efe82f80f0e41ceba1f93b5c0054e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Materials/URP_Earth_Lod.mat using Guid(57efe82f80f0e41ceba1f93b5c0054e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '571633ad978c5e243b3b8631e973579d') in 0.035692 seconds 
+  Time since last request: 79.026905 seconds.
+  path: Assets/Wkun/wkunuv.psd
+  artifactKey: Guid(b7dceac0941bb4e4f98b707df3ed92bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Wkun/wkunuv.psd using Guid(b7dceac0941bb4e4f98b707df3ed92bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '587b51ed0e2b01cb4389be0fb9e0913f') in 0.009600 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000092 seconds.
-  path: Assets/Planets of the Solar System 3D/Prefabs/Nebula_00.prefab
-  artifactKey: Guid(0d6eac9ae2914445e800eedd322e8b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Prefabs/Nebula_00.prefab using Guid(0d6eac9ae2914445e800eedd322e8b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34c25e4497be71676e53cbbd0ab84cc5') in 0.020752 seconds 
+  Time since last request: 31.784795 seconds.
+  path: Assets/Tkun/tkiunuv.psd
+  artifactKey: Guid(6a6604a6bd2b74dd89734bb06c4a8baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tkun/tkiunuv.psd using Guid(6a6604a6bd2b74dd89734bb06c4a8baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9c7c6fb24e28e82002f1bee9836f8ce') in 0.021512 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000114 seconds.
-  path: Assets/Planets of the Solar System 3D/Prefabs/Sun.prefab
-  artifactKey: Guid(5f776740c447e45afb25edbca842de92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Prefabs/Sun.prefab using Guid(5f776740c447e45afb25edbca842de92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2017c8abb0d06b3e7a3a5ae6c2e9f2cc') in 0.020626 seconds 
+  Time since last request: 0.000080 seconds.
+  path: Assets/Tkun/Tkun.fbx
+  artifactKey: Guid(32f814b4f925b4b4eac3d3bc741ae574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tkun/Tkun.fbx using Guid(32f814b4f925b4b4eac3d3bc741ae574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd2e6e37a5292f0e614bda2f7d535ed3') in 1.209516 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000111 seconds.
-  path: Assets/Planets of the Solar System 3D/Materials/URP_Earth_2k.mat
-  artifactKey: Guid(670b7104971d44954831a97e59d835d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Materials/URP_Earth_2k.mat using Guid(670b7104971d44954831a97e59d835d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36245491de5d34280d86be7da00accc3') in 0.017755 seconds 
+  Time since last request: 28.582727 seconds.
+  path: Assets/Ykkun/ykunuv.psd
+  artifactKey: Guid(ed14694390ace4baf9ed1947f75d5cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Ykkun/ykunuv.psd using Guid(ed14694390ace4baf9ed1947f75d5cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff4f27ee97ff2fb41a01a32cc5d5b58') in 0.009579 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000092 seconds.
-  path: Assets/Planets of the Solar System 3D/Materials/Skybox.mat
-  artifactKey: Guid(d51a2253cd79945d08fbe9589d8cb631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Materials/Skybox.mat using Guid(d51a2253cd79945d08fbe9589d8cb631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39ad3020729a60d7d0c81ade5f683c94') in 0.026459 seconds 
+  Time since last request: 27.908127 seconds.
+  path: Assets/Nkun/Nkun (1).fbx
+  artifactKey: Guid(175cac690c40c40008b751c75e81784e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nkun/Nkun (1).fbx using Guid(175cac690c40c40008b751c75e81784e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61c3e50082883b6176c7cdf61f6db292') in 0.032753 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000093 seconds.
-  path: Assets/Planets of the Solar System 3D/Prefabs/Sun Sphere.prefab
-  artifactKey: Guid(ec1861462fc1b46f1a1c1c3c0f1f7f15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Planets of the Solar System 3D/Prefabs/Sun Sphere.prefab using Guid(ec1861462fc1b46f1a1c1c3c0f1f7f15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8ca711ee9806d3e20d7596d5e2fb613') in 0.016450 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
+  Time since last request: 25.267409 seconds.
+  path: Assets/Okun/hosookun.fbx
+  artifactKey: Guid(942adc41fa968487085a234ffce7a3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Okun/hosookun.fbx using Guid(942adc41fa968487085a234ffce7a3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '255f1d417feb726827b04d5b2e9c5289') in 0.004316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 175.040021 seconds.
+  path: Assets/Nkun/Dkun.psd
+  artifactKey: Guid(7d6e6c58b25c04a62b5f1ac51560526f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nkun/Dkun.psd using Guid(7d6e6c58b25c04a62b5f1ac51560526f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a28378e0bd3305cc66513e6b2da08f') in 0.009171 seconds 

@@ -56,7 +56,7 @@ public class Enemyspawn : MonoBehaviour
     {
         //それぞれの座標をランダムに生成する
         float x = 20f;
-        float y = 0.25f;
+        float y = 0.8f;
         int num = Random.Range(1, 4);
         float z;
         if(num == 1)
