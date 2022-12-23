@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,10 +18,25 @@ public class PlayerController : MonoBehaviour
     float FingerPosNowY;
     float PosDiff=10.0f;
 
+    private GameObject timerObject;
+    StartTimer timerScript;
+
+    private float score = 0;
+    private int intScore = 0;
+    private static int bestScore;
+
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI bestText;
+
+    MeshRenderer mesh;
+
     private void Start()
     {
+        bestScore = PlayerPrefs.GetInt("BESTSCORE", 0);
+        timerObject = GameObject.Find("GameObject");
+        timerScript = timerObject.GetComponent<StartTimer>();
         rbody = this.GetComponent<Rigidbody>();
-        
+        mesh = GetComponent<MeshRenderer>();     
     }
 
     void Update()
@@ -118,6 +134,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if (timerScript.totalTime<=0)
+        {
+            score += Time.deltaTime * 10;
+            intScore = (int)score;
+            scoreText.text = intScore.ToString();
+            if(intScore>=bestScore)
+            {
+                bestScore = intScore;
+            }
+            PlayerPrefs.SetInt("BESTSCORE", bestScore);
+            bestText.text = $"Best Score : {bestScore}.";
+        }
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("enemy"))
@@ -125,6 +157,16 @@ public class PlayerController : MonoBehaviour
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
             this.enabled = false;
+        }
+
+        if (other.gameObject.CompareTag("coin"))
+        {
+            score += 100;
+        }
+
+        if (other.gameObject.CompareTag("invincible"))
+        {
+            StartCoroutine("Transparent");
         }
     }
 
@@ -164,5 +206,12 @@ public class PlayerController : MonoBehaviour
         }
         inMove = false;
         canMove = false;
+    }
+
+    IEnumerator Transparent()
+    {
+        mesh.material.color = mesh.material.color - new Color32(0,0,0,10);
+        yield return new WaitForSeconds(5.0f);
+        mesh.material.color = mesh.material.color + new Color32(0,0,0,10);
     }
 }

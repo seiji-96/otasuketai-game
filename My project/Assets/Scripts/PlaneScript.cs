@@ -17,18 +17,10 @@ public class PlaneScript : MonoBehaviour
 
     private GameObject timerObject;
     StartTimer timerScript;
-
-    private float score = 0;
-    private int intScore = 0;
-    private static int bestScore;
-
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI bestText;
     
     
     void Start()
     {
-        bestScore = PlayerPrefs.GetInt("BESTSCORE", 0);
         timerObject = GameObject.Find("GameObject");
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
@@ -49,15 +41,6 @@ public class PlaneScript : MonoBehaviour
                     step[i].gameObject.transform.position = new Vector3(respawn, 0, 0);
                 }
             }
-            score += Time.deltaTime * 10;
-            intScore = (int)score;
-            scoreText.text = intScore.ToString();
-            if(intScore>=bestScore)
-            {
-                bestScore = intScore;
-            }
-            PlayerPrefs.SetInt("BESTSCORE", bestScore);
-            bestText.text = $"Best Score : {bestScore}.";
             speed = 1.000001f * speed;
         }
     }
