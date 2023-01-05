@@ -25,7 +25,7 @@ public class PlaneScript : MonoBehaviour
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
         {
-            step[i] = Instantiate(stage[i], new Vector3(4 * i, 0, 0), Quaternion.identity);
+            step[i] = Instantiate(stage[i], new Vector3(4 * i, 0, 0), Quaternion.Euler(0, 90, 0));
         }
     }
     

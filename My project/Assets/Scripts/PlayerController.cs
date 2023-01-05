@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestText;
 
+    public bool isTransparent = false;
+
     MeshRenderer mesh;
 
     private void Start()
@@ -45,13 +47,13 @@ public class PlayerController : MonoBehaviour
         //Move
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(tmp.z <= 1.2f && !inMove && tmp.z >= 0.8f)
+            if(tmp.z+1.167 <= 1.2f && !inMove && tmp.z+1.167 >= 0.8f)
             {
                 inMove = true;
                 StartCoroutine("MoveRight");         
             }
 
-            if(tmp.z <= 0.2f && tmp.z >= -0.2f && !inMove)
+            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
             {
                 inMove = true;
                 StartCoroutine("MoveRight");       
@@ -60,13 +62,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if(tmp.z >= -1.2f && tmp.z <= -0.8f && !inMove)
+            if(tmp.z+1.167 >= -1.2f && tmp.z+1.167 <= -0.8f && !inMove)
             {
                 inMove = true;
                 StartCoroutine("MoveLeft");         
             }
 
-            if(tmp.z <= 0.2f && tmp.z >= -0.2f && !inMove)
+            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
             {
                 inMove = true;
                 StartCoroutine("MoveLeft");        
@@ -150,9 +152,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("enemy") && !isTransparent)
         {
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -174,7 +176,7 @@ public class PlayerController : MonoBehaviour
     {
         for(int i=0; i<5; i++)
         {
-            transform.Translate(0, 0, 0.2f);
+            transform.Translate(0.2f, 0, 0);
             yield return new WaitForSeconds(0.01f);
         }
         inMove = false;
@@ -185,7 +187,7 @@ public class PlayerController : MonoBehaviour
     {
         for(int i=0; i<5; i++)
         {
-            transform.Translate(0, 0, -0.2f);
+            transform.Translate(-0.2f, 0, 0);
             yield return new WaitForSeconds(0.01f);
         }
         inMove = false;
@@ -210,8 +212,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Transparent()
     {
-        mesh.material.color = mesh.material.color - new Color32(0,0,0,10);
+        mesh.material.color = mesh.material.color - new Color32(0,0,0,200);
+        isTransparent = true;
         yield return new WaitForSeconds(5.0f);
-        mesh.material.color = mesh.material.color + new Color32(0,0,0,10);
+        isTransparent = false;
+        mesh.material.color = mesh.material.color + new Color32(0,0,0,200);
     }
 }
