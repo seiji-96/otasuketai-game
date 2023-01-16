@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public bool isTransparent = false;
 
     MeshRenderer mesh;
+    GameObject shield;
+
+    Coroutine _someCoroutine;
 
     private void Start()
     {
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour
         timerScript = timerObject.GetComponent<StartTimer>();
         rbody = this.GetComponent<Rigidbody>();
         mesh = GetComponent<MeshRenderer>();     
+        shield = transform.GetChild(0).gameObject;
     }
 
     void Update()
@@ -161,6 +165,13 @@ public class PlayerController : MonoBehaviour
             this.enabled = false;
         }
 
+        if (other.gameObject.CompareTag("enemy") && isTransparent)
+        {
+            StopCoroutine(_someCoroutine);
+            isTransparent = false;
+            shield.SetActive(false);
+        }
+
         if (other.gameObject.CompareTag("coin"))
         {
             score += 100;
@@ -168,7 +179,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("invincible"))
         {
-            StartCoroutine("Transparent");
+            _someCoroutine = StartCoroutine("Transparent");
         }
     }
 
@@ -212,10 +223,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Transparent()
     {
-        mesh.material.color = mesh.material.color - new Color32(0,0,0,200);
+        shield.SetActive(true);
         isTransparent = true;
         yield return new WaitForSeconds(5.0f);
         isTransparent = false;
-        mesh.material.color = mesh.material.color + new Color32(0,0,0,200);
+        shield.SetActive(false);
     }
 }
