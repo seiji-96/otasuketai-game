@@ -31,7 +31,7 @@ public class PlaneScript : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (timerScript.totalTime<=0)
+        if (timerScript.totalTime<=1)
         {
             for (int i = 0; i < step.Length; i++)
             {

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rbody;
     public Canvas canvas;
+    public Canvas canvas2;
     private Vector3 pos;
     public bool inMove = false;
     public bool canMove = false;
@@ -142,7 +143,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (timerScript.totalTime<=0)
+        if (timerScript.totalTime<=1)
         {
             score += Time.deltaTime * 10;
             intScore = (int)score;
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
                 bestScore = intScore;
             }
             PlayerPrefs.SetInt("BESTSCORE", bestScore);
-            bestText.text = $"Best Score : {bestScore}.";
+            bestText.text = $"Best Score : {bestScore}";
         }
     }
 
@@ -161,6 +162,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("enemy") && !isTransparent)
         {
             canvas.gameObject.SetActive(true);
+            canvas2.gameObject.SetActive(true);
             Time.timeScale = 0;
             this.enabled = false;
         }

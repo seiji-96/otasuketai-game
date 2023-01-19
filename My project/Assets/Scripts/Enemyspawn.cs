@@ -18,13 +18,15 @@ public class Enemyspawn : MonoBehaviour
     public float speed = -10f;
 
     private float posCount;
+
+    int num;
  
     // Start is called before the first frame update
     void Start()
     {
         //時間間隔を決定する
         interval = 1f;
-        time = -3f;
+        time = -2f;
     }
  
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class Enemyspawn : MonoBehaviour
                 enemy.transform.position = GetRandomPosition();
                 Rigidbody rg = enemy.GetComponent<Rigidbody>();
                 
-                posCount = enemy.gameObject.transform.position.z;
+                posCount = num;
             } 
             //経過時間を初期化して再度時間計測を始める
             time = 0f;
@@ -57,17 +59,21 @@ public class Enemyspawn : MonoBehaviour
         //それぞれの座標をランダムに生成する
         float x = 20f;
         float y = 0.8f;
-        int num = Random.Range(1, 4);
+        num = Random.Range(1, 4);
         float z;
-        if(num == 1)
-        {
-            z = -1.0f;
-        }else if(num == 2){
-            z = 0;
+        if(posCount != num){
+            if(num == 1)
+            {
+                z = -1.0f;
+            }else if(num == 2){
+                z = 0;
+            }else{
+                z = 1.0f;
+            }
         }else{
-            z = 1.0f;
+            posCount = 100;
+            z = 3000;
         }
- 
         //Vector3型のPositionを返す
         return new Vector3(x,y,z);
     }

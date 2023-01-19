@@ -21,11 +21,11 @@ public class StartTimer : MonoBehaviour
         totalTime -= Time.deltaTime;
 		seconds = (int)totalTime;
 		timerText.text= seconds.ToString();
-        if (totalTime<=0 && totalTime>=-0.5)
+        if (totalTime<=1 && totalTime>=0.5)
         {
-            timerText.text = "Start";
+            timerText.text = "START!";
         }
-        if (totalTime<-0.5)
+        if (totalTime<0.5)
         {
             timerText.text = "";
         }
