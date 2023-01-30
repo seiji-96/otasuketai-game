@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.003181266, g: 0.013714704, b: 0.049082674, a: 1}
+  m_IndirectSpecularColor: {r: 0.009592626, g: 0.02381732, b: 0.05562292, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,8 +634,8 @@ GameObject:
   - component: {fileID: 796705461}
   - component: {fileID: 796705460}
   - component: {fileID: 796705463}
-  - component: {fileID: 796705464}
   - component: {fileID: 796705465}
+  - component: {fileID: 796705466}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -665,7 +665,7 @@ MonoBehaviour:
   - {fileID: 6076046912252469902, guid: 214df0f7db1f5794aa4579c1b211242c, type: 3}
   - {fileID: 6076046912252469902, guid: 54c77a417ac7e564b97abd23a4e2f97f, type: 3}
   - {fileID: 6076046912252469902, guid: 500b2d7a65fc49f4383e0b4da1acb980, type: 3}
-  - {fileID: 6076046912252469902, guid: 8492d0e242a4e63479883e3c0b9afc9e, type: 3}
+  - {fileID: 6076046912252469902, guid: 500b2d7a65fc49f4383e0b4da1acb980, type: 3}
   speed: 10
 --- !u!4 &796705461
 Transform:
@@ -702,33 +702,7 @@ MonoBehaviour:
   - {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
   - {fileID: 1610884164528438, guid: 5d1442ad8c11442988e0eca5d8af73f0, type: 3}
   - {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
-  speed: 10
---- !u!114 &796705464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796705459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c72ed2bb8876a438867bec82a9d864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  step:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  zMinPosition: 0
-  zMaxPosition: 3
-  speed: -10
+  speed: 5
 --- !u!114 &796705465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,10 +712,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 796705459}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f63987ef4544d6a843157bcb66cd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+  - {fileID: 1119693154649792061, guid: ac15087df797b4951a516d32b33e1a53, type: 3}
+  - {fileID: 1119693154649792061, guid: 037499516868f498588770e7aa9ae4a3, type: 3}
+  - {fileID: 1119693154649792061, guid: 86ac8bd868e1d4af6a8993d9681a1c6c, type: 3}
+  - {fileID: 1119693154649792061, guid: f074cc9ff18a645b8931f3f151cc6ab5, type: 3}
+  - {fileID: 1119693154649792061, guid: 1e4bd84e41f814b6da56efd33ca64a57, type: 3}
+  - {fileID: 1119693154649792061, guid: a45d7557f25044e42b28d834f25f0bca, type: 3}
+  - {fileID: 1119693154649792061, guid: bb56eb7c916b244fba4c990ac0f55ebc, type: 3}
+  - {fileID: 1119693154649792061, guid: 8b90856a9b0624792a9fc79c2347fcea, type: 3}
+  speed: 10
+--- !u!114 &796705466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796705459}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f0103ff73c37645ba127dcd0019682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 775504298496372804, guid: 7f93d25516ed97d4592fe44cd47dd9e5, type: 3}
+  enemyPrefab: {fileID: 8983551931403042585, guid: 493d6596ce89c60449105f2ae8234abc, type: 3}
   zMinPosition: 0
   zMaxPosition: 3
   speed: -10
