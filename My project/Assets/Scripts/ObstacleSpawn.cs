@@ -24,13 +24,13 @@ public class ObstacleSpawn : MonoBehaviour
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < 5; i++)
         {
-            step[i] = Instantiate(enemy[Random.Range(0,9)], new Vector3(8 * (i+1), -6, 4.7f), Quaternion.Euler(0, 90, 0));
+            step[i] = Instantiate(enemy[Random.Range(0,10)], new Vector3(8 * (i+2), -6, 4.7f), Quaternion.Euler(0, 90, 0));
         }
     }
 
     void FixedUpdate()
     {
-        if (timerScript.totalTime<=1)
+        if (timerScript.totalTime<=0.5)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -38,10 +38,10 @@ public class ObstacleSpawn : MonoBehaviour
                 if (step[i].gameObject.transform.position.x < disappear)
                 {
                     Destroy(step[i]);
-                    step[i] = Instantiate(enemy[Random.Range(0,9)], new Vector3(40 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
+                    step[i] = Instantiate(enemy[Random.Range(0,10)], new Vector3(40 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
                 }
             }
-            speed = 1.0001f * speed;
+            speed = 1.00008f * speed;
         }
     }
 

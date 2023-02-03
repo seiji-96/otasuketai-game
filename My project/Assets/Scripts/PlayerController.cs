@@ -143,9 +143,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (timerScript.totalTime<=1)
+        if (timerScript.totalTime<=0.5)
         {
-            score += Time.deltaTime * 10;
+            score += Time.deltaTime * 3 * speed;
             intScore = (int)score;
             scoreText.text = intScore.ToString();
             if(intScore>=bestScore)
@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetInt("BESTSCORE", bestScore);
             bestText.text = $"Best Score : {bestScore}";
         }
-        speed = 1.00001f * speed;
+        speed = 1.00008f * speed;
     }
 
     void OnTriggerEnter(Collider other)
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("coin"))
         {
-            score += 20;
+            score += 5;
         }
 
         if (other.gameObject.CompareTag("invincible"))
@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(0.2f, 0, 0);
-            yield return new WaitForSeconds(0.01f*speed);
+            yield return new WaitForSeconds(0.01f/speed);
         }
         inMove = false;
         canMove = false;
@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(-0.2f, 0, 0);
-            yield return new WaitForSeconds(0.01f*speed);
+            yield return new WaitForSeconds(0.01f/speed);
         }
         inMove = false;
         canMove = false;
@@ -213,7 +213,7 @@ public class PlayerController : MonoBehaviour
         for(int i=1; i<50; i++)
         {
             transform.Translate(0, 0.1f-i*0.004f, 0);
-            yield return new WaitForSeconds(0.008f*speed);
+            yield return new WaitForSeconds(0.01f/speed);
         }
         inMove = false;
         canMove = false;

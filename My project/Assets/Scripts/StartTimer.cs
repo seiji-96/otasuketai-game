@@ -23,9 +23,13 @@ public class StartTimer : MonoBehaviour
 		timerText.text= seconds.ToString();
         if (totalTime<=1 && totalTime>=0.5)
         {
-            timerText.text = "START!";
+            timerText.text = "";
         }
-        if (totalTime<0.5)
+        if (totalTime<0.5 && totalTime>=0)
+        {
+            timerText.text = "START!!";
+        }
+        if (totalTime<0)
         {
             timerText.text = "";
         }
