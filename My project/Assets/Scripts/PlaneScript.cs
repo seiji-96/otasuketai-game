@@ -12,7 +12,7 @@ public class PlaneScript : MonoBehaviour
 
     public float speed = 10;
     private float disappear = -10;
-    private float respawn = 30;
+    private float respawn = 39;
 
 
     private GameObject timerObject;
@@ -25,7 +25,7 @@ public class PlaneScript : MonoBehaviour
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
         {
-            step[i] = Instantiate(stage[i], new Vector3(4 * i, 0, 0), Quaternion.Euler(0, 90, 0));
+            step[i] = Instantiate(stage[i], new Vector3(5 * i, 0, 0), Quaternion.Euler(0, 90, 0));
         }
     }
     
@@ -41,7 +41,6 @@ public class PlaneScript : MonoBehaviour
                     step[i].gameObject.transform.position = new Vector3(respawn, 0, 0);
                 }
             }
-            speed = 1.000001f * speed;
         }
     }
 }

@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public float speed = 1;
     private Rigidbody rbody;
     public Canvas canvas;
     public Canvas canvas2;
@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetInt("BESTSCORE", bestScore);
             bestText.text = $"Best Score : {bestScore}";
         }
+        speed = 1.00001f * speed;
     }
 
     void OnTriggerEnter(Collider other)
@@ -176,7 +177,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("coin"))
         {
-            score += 100;
+            score += 20;
         }
 
         if (other.gameObject.CompareTag("invincible"))
@@ -190,7 +191,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(0.2f, 0, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.01f*speed);
         }
         inMove = false;
         canMove = false;
@@ -201,7 +202,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(-0.2f, 0, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.01f*speed);
         }
         inMove = false;
         canMove = false;
@@ -209,15 +210,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Jump()
     {
-        for(int i=0; i<15; i++)
+        for(int i=1; i<50; i++)
         {
-            transform.Translate(0, 0.1f, 0);
-            yield return new WaitForSeconds(0.01f);
-        }
-        for(int i=0; i<15; i++)
-        {
-            transform.Translate(0, -0.1f, 0);
-            yield return new WaitForSeconds(0.01f);
+            transform.Translate(0, 0.1f-i*0.004f, 0);
+            yield return new WaitForSeconds(0.008f*speed);
         }
         inMove = false;
         canMove = false;
