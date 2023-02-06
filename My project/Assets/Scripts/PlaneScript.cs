@@ -12,7 +12,7 @@ public class PlaneScript : MonoBehaviour
 
     public float speed = 10;
     private float disappear = -10;
-    private float respawn = 39;
+    private float respawn = 39.8f;
 
 
     private GameObject timerObject;

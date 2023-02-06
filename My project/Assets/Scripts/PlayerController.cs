@@ -12,12 +12,13 @@ public class PlayerController : MonoBehaviour
     public Canvas canvas2;
     private Vector3 pos;
     public bool inMove = false;
+    public bool inJump = false;
     public bool canMove = false;
     float FingerPosX0;
     float FingerPosY0;
     float FingerPosNowX;
     float FingerPosNowY;
-    float PosDiff=10.0f;
+    float PosDiff=50.0f;
 
     private GameObject timerObject;
     StartTimer timerScript;
@@ -82,9 +83,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if(!inMove)
+            if(!inMove && !inJump)
             {
-                inMove = true;
+                inJump = true;
                 StartCoroutine("Jump");
             }          
         }
@@ -104,22 +105,22 @@ public class PlayerController : MonoBehaviour
 
         if (FingerPosNowY - FingerPosY0 > PosDiff && canMove)
         {
-            if(!inMove)
+            if(!inMove && !inJump)
             {
-                inMove = true;
+                inJump = true;
                 StartCoroutine("Jump");
             }      
         }
         
         if (FingerPosNowX　-　FingerPosX0 >= PosDiff && canMove)
         {
-            if(tmp.z <= 1.2f && !inMove && tmp.z >= 0.8f)
+            if(tmp.z+1.167 <= 1.2f && !inMove && tmp.z+1.167 >= 0.8f)
             {
                 inMove = true;
                 StartCoroutine("MoveRight");         
             }
 
-            if(tmp.z <= 0.2f && tmp.z >= -0.2f && !inMove)
+            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
             {
                 inMove = true;
                 StartCoroutine("MoveRight");       
@@ -127,13 +128,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (FingerPosNowX　-　FingerPosX0 <= -PosDiff && canMove)
         {
-            if(tmp.z >= -1.2f && tmp.z <= -0.8f && !inMove)
+            if(tmp.z+1.167 >= -1.2f && tmp.z+1.167 <= -0.8f && !inMove)
             {
                 inMove = true;
                 StartCoroutine("MoveLeft");         
             }
 
-            if(tmp.z <= 0.2f && tmp.z >= -0.2f && !inMove)
+            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
             {
                 inMove = true;
                 StartCoroutine("MoveLeft");        
@@ -215,7 +216,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(0, 0.1f-i*0.004f, 0);
             yield return new WaitForSeconds(0.01f/speed);
         }
-        inMove = false;
+        inJump = false;
         canMove = false;
     }
 
