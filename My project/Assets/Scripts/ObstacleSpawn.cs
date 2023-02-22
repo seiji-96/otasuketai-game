@@ -67,9 +67,9 @@ public class ObstacleSpawn : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(speed < 20)
+        if(speed < 21)
         {
-            speed = 0.002f + speed;
+            speed = 0.0025f + speed;
         }  
     }
 

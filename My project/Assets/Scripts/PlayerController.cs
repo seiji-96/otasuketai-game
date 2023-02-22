@@ -57,9 +57,6 @@ public class PlayerController : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();     
         shield = transform.GetChild(0).gameObject;
         audioSource = GetComponent<AudioSource>();
-    }
-
-    void Awake() {
         Application.targetFrameRate = 60;
     }
 
@@ -246,17 +243,17 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Jump()
     {
-        for(int i=1; i<50; i++)
+        for(int i=1; i<40; i++)
         {
-            transform.Translate(0, 0.1f-i*0.004f, 0);
-            if (!(i==48 || i==49 || i==47))
-            {
-                yield return new WaitForSeconds(speed);
-            }    
-            /*if (!(i==38 || i==39))
+            transform.Translate(0, 0.1f-i*0.005f, 0);
+            //if (!(i==48 || i==49))
+            //{
+                //yield return new WaitForSeconds(speed);
+            //}    
+            if (!(i==39))
             {
                 yield return new WaitForFixedUpdate();
-            }*/     
+            }   
         }
         inJump = false;
         canMove = false;
