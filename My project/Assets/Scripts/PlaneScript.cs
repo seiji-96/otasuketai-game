@@ -15,13 +15,12 @@ public class PlaneScript : MonoBehaviour
     private float respawn = 39.8f;
 
 
-    private GameObject timerObject;
+    public GameObject timerObject;
     StartTimer timerScript;
     
     
     void Start()
     {
-        timerObject = GameObject.Find("GameObject");
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
         {

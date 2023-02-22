@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     float FingerPosNowY;
     float PosDiff=50.0f;
 
-    private GameObject timerObject;
+    public GameObject timerObject;
     StartTimer timerScript;
 
     private float score = 0;
@@ -37,107 +37,128 @@ public class PlayerController : MonoBehaviour
 
     Coroutine _someCoroutine;
 
+    public AudioClip jump;
+    public AudioClip move;
+    public AudioClip getCoin;
+    public AudioClip getShield;
+    public AudioClip over;
+    public AudioClip count;
+    AudioSource audioSource;
+    AudioSource audioSource2;
+
+    private bool countS;
+
     private void Start()
     {
         bestScore = PlayerPrefs.GetInt("BESTSCORE", 0);
-        timerObject = GameObject.Find("GameObject");
         timerScript = timerObject.GetComponent<StartTimer>();
+        audioSource2 = timerObject.GetComponent<AudioSource>();
         rbody = this.GetComponent<Rigidbody>();
         mesh = GetComponent<MeshRenderer>();     
         shield = transform.GetChild(0).gameObject;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        Vector3 tmp = this.transform.position;
-        //Move
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (timerScript.seconds == 3 && !countS)
         {
-            if(tmp.z+1.167 <= 1.2f && !inMove && tmp.z+1.167 >= 0.8f)
+            audioSource.PlayOneShot(count);
+            countS = true;
+        }
+        if (timerScript.totalTime<=0)
+        {
+            Vector3 tmp = this.transform.position;
+            //Move
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                inMove = true;
-                StartCoroutine("MoveRight");         
+                if(tmp.z+1.167 <= 1.2f && !inMove && tmp.z+1.167 >= 0.8f)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveRight");         
+                }
+
+                if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveRight");       
+                }
             }
 
-            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                inMove = true;
-                StartCoroutine("MoveRight");       
-            }
-        }
+                if(tmp.z+1.167 >= -1.2f && tmp.z+1.167 <= -0.8f && !inMove)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveLeft");         
+                }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if(tmp.z+1.167 >= -1.2f && tmp.z+1.167 <= -0.8f && !inMove)
-            {
-                inMove = true;
-                StartCoroutine("MoveLeft");         
-            }
-
-            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
-            {
-                inMove = true;
-                StartCoroutine("MoveLeft");        
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            if(!inMove && !inJump)
-            {
-                inJump = true;
-                StartCoroutine("Jump");
-            }          
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            FingerPosX0 = Input.mousePosition.x;
-            FingerPosY0 = Input.mousePosition.y;
-            canMove = true;
-        }
-        
-        if (Input.GetMouseButton(0))
-        {
-            FingerPosNowX = Input.mousePosition.x;
-            FingerPosNowY = Input.mousePosition.y;
-        }
-
-        if (FingerPosNowY - FingerPosY0 > PosDiff && canMove)
-        {
-            if(!inMove && !inJump)
-            {
-                inJump = true;
-                StartCoroutine("Jump");
-            }      
-        }
-        
-        if (FingerPosNowX　-　FingerPosX0 >= PosDiff && canMove)
-        {
-            if(tmp.z+1.167 <= 1.2f && !inMove && tmp.z+1.167 >= 0.8f)
-            {
-                inMove = true;
-                StartCoroutine("MoveRight");         
+                if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveLeft");        
+                }
             }
 
-            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                inMove = true;
-                StartCoroutine("MoveRight");       
-            }
-        }
-        else if (FingerPosNowX　-　FingerPosX0 <= -PosDiff && canMove)
-        {
-            if(tmp.z+1.167 >= -1.2f && tmp.z+1.167 <= -0.8f && !inMove)
-            {
-                inMove = true;
-                StartCoroutine("MoveLeft");         
+                if(!inMove && !inJump)
+                {
+                    inJump = true;
+                    StartCoroutine("Jump");
+                    audioSource.PlayOneShot(jump);
+                }          
             }
 
-            if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+            if (Input.GetMouseButtonDown(0))
             {
-                inMove = true;
-                StartCoroutine("MoveLeft");        
+                FingerPosX0 = Input.mousePosition.x;
+                FingerPosY0 = Input.mousePosition.y;
+                canMove = true;
+            }
+            
+            if (Input.GetMouseButton(0))
+            {
+                FingerPosNowX = Input.mousePosition.x;
+                FingerPosNowY = Input.mousePosition.y;
+            }
+
+            if (FingerPosNowY - FingerPosY0 > PosDiff && canMove)
+            {
+                if(!inMove && !inJump)
+                {
+                    inJump = true;
+                    StartCoroutine("Jump");
+                }      
+            }
+            
+            if (FingerPosNowX　-　FingerPosX0 >= PosDiff && canMove)
+            {
+                if(tmp.z+1.167 <= 1.2f && !inMove && tmp.z+1.167 >= 0.8f)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveRight");         
+                }
+
+                if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveRight");       
+                }
+            }
+            else if (FingerPosNowX　-　FingerPosX0 <= -PosDiff && canMove)
+            {
+                if(tmp.z+1.167 >= -1.2f && tmp.z+1.167 <= -0.8f && !inMove)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveLeft");         
+                }
+
+                if(tmp.z+1.167 <= 0.2f && tmp.z+1.167 >= -0.2f && !inMove)
+                {
+                    inMove = true;
+                    StartCoroutine("MoveLeft");        
+                }
             }
         }
     }
@@ -156,13 +177,15 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetInt("BESTSCORE", bestScore);
             bestText.text = $"Best Score : {bestScore}";
         }
-        speed = 1.00008f * speed;
+        speed = 1.0001f * speed;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("enemy") && !isTransparent)
         {
+            audioSource2.Stop(); 
+            audioSource.PlayOneShot(over, 0.5f);
             canvas.gameObject.SetActive(true);
             canvas2.gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -178,17 +201,20 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("coin"))
         {
+            audioSource.PlayOneShot(getCoin, 0.3f);
             score += 5;
         }
 
         if (other.gameObject.CompareTag("invincible"))
         {
+            audioSource.PlayOneShot(getShield);
             _someCoroutine = StartCoroutine("Transparent");
         }
     }
 
     IEnumerator MoveLeft()
     {
+        audioSource.PlayOneShot(move, 1.5f);
         for(int i=0; i<5; i++)
         {
             transform.Translate(0.2f, 0, 0);
@@ -200,6 +226,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator MoveRight()
     {
+        audioSource.PlayOneShot(move, 1.5f);
         for(int i=0; i<5; i++)
         {
             transform.Translate(-0.2f, 0, 0);
@@ -214,7 +241,7 @@ public class PlayerController : MonoBehaviour
         for(int i=1; i<50; i++)
         {
             transform.Translate(0, 0.1f-i*0.004f, 0);
-            yield return new WaitForSeconds(0.01f/speed);
+            yield return new WaitForSeconds(0.005f/speed);
         }
         inJump = false;
         canMove = false;

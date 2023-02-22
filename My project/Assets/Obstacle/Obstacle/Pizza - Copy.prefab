@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 719299653737998133}
   - component: {fileID: 5785753969704084143}
   m_Layer: 0
-  m_Name: Pizza
+  m_Name: Pizza - Copy
   m_TagString: invincible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

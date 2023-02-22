@@ -8,11 +8,13 @@ public class StartTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
 	public float totalTime;
-	int seconds;
+	public int seconds;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,13 +27,17 @@ public class StartTimer : MonoBehaviour
         {
             timerText.text = "";
         }
-        if (totalTime<0.5 && totalTime>=0)
+        if (totalTime<0.99 && totalTime>=0)
         {
             timerText.text = "START!!";
         }
         if (totalTime<0)
         {
             timerText.text = "";
+        }
+        if (seconds==0)
+        {
+            audioSource.Play(); 
         }
     }
 }

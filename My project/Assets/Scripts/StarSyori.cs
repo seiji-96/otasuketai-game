@@ -5,7 +5,7 @@ using UnityEngine;
 public class StarSyori : MonoBehaviour
 {
     public List<GameObject> stage;
-    private GameObject timerObject;
+    public GameObject timerObject;
     StartTimer timerScript;
 
     GameObject[] step = new GameObject[8];
@@ -18,7 +18,6 @@ public class StarSyori : MonoBehaviour
     void Start()
     {
         Random.InitState(System.DateTime.Now.Millisecond);
-        timerObject = GameObject.Find("GameObject");
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < step.Length; i++)
         {
