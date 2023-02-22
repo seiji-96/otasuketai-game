@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 1;
+    public float speed = 0.01f;
     private Rigidbody rbody;
     public Canvas canvas;
     public Canvas canvas2;
@@ -59,6 +59,10 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    void Awake() {
+        Application.targetFrameRate = 60;
+    }
+
     void Update()
     {
         if (timerScript.seconds == 3 && !countS)
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(count);
             countS = true;
         }
-        if (timerScript.totalTime<=0)
+        if (timerScript.totalTime<=0.5f)
         {
             Vector3 tmp = this.transform.position;
             //Move
@@ -165,9 +169,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (timerScript.totalTime<=0.5)
+        if (timerScript.totalTime<=0.5f)
         {
-            score += Time.deltaTime * 3 * speed;
+            score += Time.deltaTime * 3 / speed / 220;
             intScore = (int)score;
             scoreText.text = intScore.ToString();
             if(intScore>=bestScore)
@@ -177,7 +181,11 @@ public class PlayerController : MonoBehaviour
             PlayerPrefs.SetInt("BESTSCORE", bestScore);
             bestText.text = $"Best Score : {bestScore}";
         }
-        speed = 1.0001f * speed;
+        //if(speed >= 0.00005)
+        //{
+            //speed -= 0.000001f;
+        //}
+            
     }
 
     void OnTriggerEnter(Collider other)
@@ -218,7 +226,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(0.2f, 0, 0);
-            yield return new WaitForSeconds(0.01f/speed);
+            yield return new WaitForSeconds(speed);
         }
         inMove = false;
         canMove = false;
@@ -230,7 +238,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(-0.2f, 0, 0);
-            yield return new WaitForSeconds(0.01f/speed);
+            yield return new WaitForSeconds(speed);
         }
         inMove = false;
         canMove = false;
@@ -241,7 +249,14 @@ public class PlayerController : MonoBehaviour
         for(int i=1; i<50; i++)
         {
             transform.Translate(0, 0.1f-i*0.004f, 0);
-            yield return new WaitForSeconds(0.005f/speed);
+            if (!(i==48 || i==49 || i==47))
+            {
+                yield return new WaitForSeconds(speed);
+            }    
+            /*if (!(i==38 || i==39))
+            {
+                yield return new WaitForFixedUpdate();
+            }*/     
         }
         inJump = false;
         canMove = false;
@@ -251,7 +266,7 @@ public class PlayerController : MonoBehaviour
     {
         shield.SetActive(true);
         isTransparent = true;
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(10.0f);
         isTransparent = false;
         shield.SetActive(false);
     }
