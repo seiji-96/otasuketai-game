@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0.01f;
+    public float speed = 2.0f;
     private Rigidbody rbody;
     public Canvas canvas;
     public Canvas canvas2;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     StartTimer timerScript;
 
     private float score = 0;
-    private int intScore = 0;
+    public int intScore = 0;
     private static int bestScore;
 
     public TextMeshProUGUI scoreText;
@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        bestScore = PlayerPrefs.GetInt("BESTSCORE", 0);
         timerScript = timerObject.GetComponent<StartTimer>();
         audioSource2 = timerObject.GetComponent<AudioSource>();
         rbody = this.GetComponent<Rigidbody>();
@@ -168,20 +167,13 @@ public class PlayerController : MonoBehaviour
     {
         if (timerScript.totalTime<=0.5f)
         {
-            score += Time.deltaTime * 3 / speed / 220;
+            score += Time.deltaTime * speed * 10 ;
             intScore = (int)score;
             scoreText.text = intScore.ToString();
-            if(intScore>=bestScore)
-            {
-                bestScore = intScore;
-            }
-            PlayerPrefs.SetInt("BESTSCORE", bestScore);
-            bestText.text = $"Best Score : {bestScore}";
+            bestText.text = $"Current Score : {intScore}";
         }
-        //if(speed >= 0.00005)
-        //{
-            //speed -= 0.000001f;
-        //}
+        speed += 0.0001f;
+        Time.timeScale += 0.0001f;
             
     }
 
@@ -223,7 +215,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(0.2f, 0, 0);
-            yield return new WaitForSeconds(speed);
+            yield return new WaitForSeconds(0.01f);
         }
         inMove = false;
         canMove = false;
@@ -235,7 +227,7 @@ public class PlayerController : MonoBehaviour
         for(int i=0; i<5; i++)
         {
             transform.Translate(-0.2f, 0, 0);
-            yield return new WaitForSeconds(speed);
+            yield return new WaitForSeconds(0.01f);
         }
         inMove = false;
         canMove = false;
@@ -243,18 +235,48 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Jump()
     {
-        for(int i=1; i<40; i++)
-        {
-            transform.Translate(0, 0.1f-i*0.005f, 0);
-            //if (!(i==48 || i==49))
-            //{
-                //yield return new WaitForSeconds(speed);
-            //}    
-            if (!(i==39))
+            for(int i=1; i<40; i++)
             {
-                yield return new WaitForFixedUpdate();
-            }   
+                transform.Translate(0, 0.1f-i*0.005f, 0);
+                //if (!(i==48 || i==49))
+                //{
+                    //yield return new WaitForSeconds(speed);
+                //}    
+                if (!(i==39))
+                {
+                    yield return new WaitForFixedUpdate();
+                }   
+            }        
+        /*else if(speed >= 0.00007)
+        {
+            for(int i=1; i<40; i++)
+            {
+                transform.Translate(0, 0.2f-i*0.01f, 0);
+                //if (!(i==48 || i==49))
+                //{
+                    //yield return new WaitForSeconds(speed);
+                //}    
+                if (!(i==39))
+                {
+                    yield return new WaitForSeconds(speed);
+                }   
+            }        
         }
+        else
+        {
+            for(int i=1; i<40; i++)
+            {
+                transform.Translate(0, 0.4f-i*0.02f, 0);
+                //if (!(i==48 || i==49))
+                //{
+                    //yield return new WaitForSeconds(speed);
+                //}    
+                if (!(i==39))
+                {
+                    yield return new WaitForSeconds(speed);
+                }   
+            }        
+        }*/
         inJump = false;
         canMove = false;
     }
