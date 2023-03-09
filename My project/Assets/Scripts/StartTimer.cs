@@ -18,26 +18,30 @@ public class StartTimer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         totalTime -= Time.deltaTime;
-		seconds = (int)totalTime;
-		timerText.text= seconds.ToString();
-        if (totalTime<=1 && totalTime>=0.5)
+        if (totalTime <= 3.9)
         {
-            timerText.text = "";
+            seconds = (int)totalTime;
+            timerText.text= seconds.ToString();
+            if (totalTime<=1 && totalTime>=0.5)
+            {
+                timerText.text = "";
+            }
+            if (totalTime<0.99 && totalTime>=0)
+            {
+                timerText.text = "START!!";
+            }
+            if (totalTime<0)
+            {
+                timerText.text = "";
+            }
+            if (seconds==0)
+            {
+                audioSource.Play(); 
+            }
         }
-        if (totalTime<0.99 && totalTime>=0)
-        {
-            timerText.text = "START!!";
-        }
-        if (totalTime<0)
-        {
-            timerText.text = "";
-        }
-        if (seconds==0)
-        {
-            audioSource.Play(); 
-        }
+            
     }
 }

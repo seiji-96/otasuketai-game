@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     MeshRenderer mesh;
     GameObject shield;
+    public GameObject slider;
 
     Coroutine _someCoroutine;
 
@@ -47,6 +48,13 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource2;
 
     private bool countS;
+    public int diffic;
+    private Slider power;
+    private int sushi;
+
+    private float currentScale;
+    private float nextTime;
+	public float interval = 1.0f;
 
     private void Start()
     {
@@ -56,6 +64,9 @@ public class PlayerController : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();     
         shield = transform.GetChild(0).gameObject;
         audioSource = GetComponent<AudioSource>();
+        power = slider.GetComponent<Slider>();
+        nextTime = Time.time;
+        Time.timeScale = 0;
         Application.targetFrameRate = 60;
     }
 
@@ -106,6 +117,17 @@ public class PlayerController : MonoBehaviour
                 {
                     inJump = true;
                     StartCoroutine("Jump");
+                    audioSource.PlayOneShot(jump);
+                }          
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if(!inMove && !inJump && sushi>=100)
+                {
+                    inMove = true;
+                    StartCoroutine("Rocket");
+                    sushi = 0;
                     audioSource.PlayOneShot(jump);
                 }          
             }
@@ -167,13 +189,39 @@ public class PlayerController : MonoBehaviour
     {
         if (timerScript.totalTime<=0.5f)
         {
-            score += Time.deltaTime * speed * 10 ;
+            if(diffic==0)
+            {
+                Time.timeScale = 1f;
+                score += Time.deltaTime * speed * 10 / 2 ;
+                speed += 0.00005f;
+                Time.timeScale += 0.00005f;
+            }
+            if(diffic==1)
+            {
+                Time.timeScale = 1.5f;
+                score += Time.deltaTime * speed * 10 ;
+                speed += 0.0001f;
+                Time.timeScale += 0.0001f;
+            }
+            if(diffic==2)
+            {
+                Time.timeScale = 3f;
+                score += Time.deltaTime * speed * 10 * 2.5f ;
+                speed += 0.0003f;
+                Time.timeScale += 0.0005f;
+            }
+            if(diffic==3)
+            {
+                Time.timeScale = 3.5f;
+                score += Time.deltaTime * speed * 10 * 5 ;
+                speed += 0.0005f;
+                Time.timeScale += 0.001f;
+            }
+                
             intScore = (int)score;
             scoreText.text = intScore.ToString();
             bestText.text = $"Current Score : {intScore}";
         }
-        speed += 0.0001f;
-        Time.timeScale += 0.0001f;
             
     }
 
@@ -200,6 +248,8 @@ public class PlayerController : MonoBehaviour
         {
             audioSource.PlayOneShot(getCoin, 0.3f);
             score += 5;
+            power.value++;
+            sushi++;
         }
 
         if (other.gameObject.CompareTag("invincible"))
@@ -231,6 +281,38 @@ public class PlayerController : MonoBehaviour
         }
         inMove = false;
         canMove = false;
+    }
+
+    IEnumerator Rocket()
+    {
+        currentScale = speed;
+        speed *= 2;
+        isTransparent = true;
+        for(int i=0; i<20; i++)
+        {
+            transform.Translate(0, 0.1f, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        yield return new WaitForSeconds(10);
+        speed = currentScale;
+
+        for(int i=0; i<20; i++)
+        {
+            transform.Translate(0, -0.1f, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        inMove = false;
+        canMove = false;
+
+        shield.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        shield.SetActive(false);
+
+        isTransparent = false;
     }
 
     IEnumerator Jump()
