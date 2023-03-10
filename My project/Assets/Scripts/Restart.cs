@@ -67,4 +67,12 @@ public class Restart : MonoBehaviour
         parent.SetActive(false);
         black.SetActive(false);
     }
+
+    public void Back()
+    {
+        parent.SetActive(false);
+        black.SetActive(false);
+        playerScript.timerScript.totalTime = 3;
+        Time.timeScale = playerScript.currentScale;
+    }
 }

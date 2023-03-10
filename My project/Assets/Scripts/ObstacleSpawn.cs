@@ -24,7 +24,7 @@ public class ObstacleSpawn : MonoBehaviour
         timerScript = timerObject.GetComponent<StartTimer>();
         for (int i = 0; i < 5; i++)
         {
-            step[i] = Instantiate(enemy[Random.Range(0,24)], new Vector3(15f * (i+1), -6, 4.7f), Quaternion.Euler(0, 90, 0));
+            step[i] = Instantiate(enemy[Random.Range(0,24)], new Vector3(18f * (i+1), -6, 4.7f), Quaternion.Euler(0, 90, 0));
         }
     }
 
@@ -38,25 +38,25 @@ public class ObstacleSpawn : MonoBehaviour
                 if (step[i].gameObject.transform.position.x < disappear && count<=20)
                 {
                     Destroy(step[i]);
-                    step[i] = Instantiate(enemy[Random.Range(0,24)], new Vector3(75 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
+                    step[i] = Instantiate(enemy[Random.Range(0,24)], new Vector3(90 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
                     count += 1;
                 }
                 if (step[i].gameObject.transform.position.x < disappear && count==21)
                 {
                     Destroy(step[i]);
-                    step[i] = Instantiate(enemy[25], new Vector3(75 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
+                    step[i] = Instantiate(enemy[25], new Vector3(90 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
                     count += 1;
                 }
                 if (step[i].gameObject.transform.position.x < disappear && count==22)
                 {
                     Destroy(step[i]);
-                    step[i] = Instantiate(enemy[25], new Vector3(75 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
+                    step[i] = Instantiate(enemy[25], new Vector3(90 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
                     count += 1;
                 }
                 if (step[i].gameObject.transform.position.x < disappear && count==23)
                 {
                     Destroy(step[i]);
-                    step[i] = Instantiate(enemy[25], new Vector3(75 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
+                    step[i] = Instantiate(enemy[25], new Vector3(90 , -6, 4.7f), Quaternion.Euler(0, 90, 0));
                     count = 0;
                 }
                 

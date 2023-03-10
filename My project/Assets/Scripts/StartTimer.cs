@@ -37,10 +37,6 @@ public class StartTimer : MonoBehaviour
             {
                 timerText.text = "";
             }
-            if (seconds==0)
-            {
-                audioSource.Play(); 
-            }
         }
             
     }

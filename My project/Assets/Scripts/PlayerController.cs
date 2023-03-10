@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     float PosDiff=50.0f;
 
     public GameObject timerObject;
-    StartTimer timerScript;
+    public StartTimer timerScript;
 
     private float score = 0;
     public int intScore = 0;
@@ -52,9 +52,13 @@ public class PlayerController : MonoBehaviour
     private Slider power;
     private int sushi;
 
-    private float currentScale;
+    public float currentScale;
     private float nextTime;
 	public float interval = 1.0f;
+    private bool muteki;
+
+    public GameObject black;
+    public GameObject pause;
 
     private void Start()
     {
@@ -79,6 +83,7 @@ public class PlayerController : MonoBehaviour
         }
         if (timerScript.totalTime<=0.5f)
         {
+            audioSource2.Play();
             Vector3 tmp = this.transform.position;
             //Move
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -123,13 +128,21 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if(!inMove && !inJump && sushi>=100)
+                if(!inMove && !inJump && sushi>=3)
                 {
                     inMove = true;
                     StartCoroutine("Rocket");
-                    sushi = 0;
                     audioSource.PlayOneShot(jump);
                 }          
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                audioSource2.Stop(); 
+                currentScale = Time.timeScale;
+                Time.timeScale = 0;
+                black.SetActive(true);
+                pause.SetActive(true);
             }
 
             if (Input.GetMouseButtonDown(0))
@@ -182,6 +195,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine("MoveLeft");        
                 }
             }
+
         }
     }
 
@@ -192,29 +206,29 @@ public class PlayerController : MonoBehaviour
             if(diffic==0)
             {
                 Time.timeScale = 1f;
-                score += Time.deltaTime * speed * 10 / 2 ;
+                score += Time.deltaTime * speed * 15 / 3 ;
                 speed += 0.00005f;
                 Time.timeScale += 0.00005f;
             }
             if(diffic==1)
             {
-                Time.timeScale = 1.5f;
-                score += Time.deltaTime * speed * 10 ;
+                Time.timeScale = 2f;
+                score += Time.deltaTime * speed * 15 / 2;
                 speed += 0.0001f;
                 Time.timeScale += 0.0001f;
             }
             if(diffic==2)
             {
                 Time.timeScale = 3f;
-                score += Time.deltaTime * speed * 10 * 2.5f ;
-                speed += 0.0003f;
+                score += Time.deltaTime * speed * 15;
+                speed += 0.0002f;
                 Time.timeScale += 0.0005f;
             }
             if(diffic==3)
             {
-                Time.timeScale = 3.5f;
-                score += Time.deltaTime * speed * 10 * 5 ;
-                speed += 0.0005f;
+                Time.timeScale = 4f;
+                score += Time.deltaTime * speed * 15 * 2 ;
+                speed += 0.0003f;
                 Time.timeScale += 0.001f;
             }
                 
@@ -227,7 +241,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy") && !isTransparent)
+        if (other.gameObject.CompareTag("enemy") && !isTransparent && !muteki)
         {
             audioSource2.Stop(); 
             audioSource.PlayOneShot(over, 0.5f);
@@ -237,9 +251,9 @@ public class PlayerController : MonoBehaviour
             this.enabled = false;
         }
 
-        if (other.gameObject.CompareTag("enemy") && isTransparent)
+        if (other.gameObject.CompareTag("enemy") && isTransparent && !muteki)
         {
-            StopCoroutine(_someCoroutine);
+            StopCoroutine("Transparent");
             isTransparent = false;
             shield.SetActive(false);
         }
@@ -247,7 +261,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("coin"))
         {
             audioSource.PlayOneShot(getCoin, 0.3f);
-            score += 5;
+            score += 5*(1 + speed);
             power.value++;
             sushi++;
         }
@@ -255,7 +269,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("invincible"))
         {
             audioSource.PlayOneShot(getShield);
-            _someCoroutine = StartCoroutine("Transparent");
+            StopCoroutine("Transparent");
+            StartCoroutine("Transparent");
         }
     }
 
@@ -285,9 +300,11 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Rocket()
     {
-        currentScale = speed;
-        speed *= 2;
-        isTransparent = true;
+        power.value = 0;
+        sushi = 0;
+        currentScale = Time.timeScale;
+        Time.timeScale *= 5;
+        muteki = true;
         for(int i=0; i<20; i++)
         {
             transform.Translate(0, 0.1f, 0);
@@ -295,7 +312,7 @@ public class PlayerController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(10);
-        speed = currentScale;
+        Time.timeScale = currentScale;
 
         for(int i=0; i<20; i++)
         {
@@ -308,57 +325,23 @@ public class PlayerController : MonoBehaviour
 
         shield.SetActive(true);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(7);
 
         shield.SetActive(false);
 
-        isTransparent = false;
+        muteki = false;
     }
 
     IEnumerator Jump()
     {
-            for(int i=1; i<40; i++)
+            for(int i=1; i<50; i++)
             {
-                transform.Translate(0, 0.1f-i*0.005f, 0);
-                //if (!(i==48 || i==49))
-                //{
-                    //yield return new WaitForSeconds(speed);
-                //}    
+                transform.Translate(0, 0.1f-i*0.004f, 0);
                 if (!(i==39))
                 {
                     yield return new WaitForFixedUpdate();
                 }   
             }        
-        /*else if(speed >= 0.00007)
-        {
-            for(int i=1; i<40; i++)
-            {
-                transform.Translate(0, 0.2f-i*0.01f, 0);
-                //if (!(i==48 || i==49))
-                //{
-                    //yield return new WaitForSeconds(speed);
-                //}    
-                if (!(i==39))
-                {
-                    yield return new WaitForSeconds(speed);
-                }   
-            }        
-        }
-        else
-        {
-            for(int i=1; i<40; i++)
-            {
-                transform.Translate(0, 0.4f-i*0.02f, 0);
-                //if (!(i==48 || i==49))
-                //{
-                    //yield return new WaitForSeconds(speed);
-                //}    
-                if (!(i==39))
-                {
-                    yield return new WaitForSeconds(speed);
-                }   
-            }        
-        }*/
         inJump = false;
         canMove = false;
     }
@@ -366,9 +349,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator Transparent()
     {
         shield.SetActive(true);
-        isTransparent = true;
-        yield return new WaitForSeconds(10.0f);
+        isTransparent = true;  
+        yield return new WaitForSeconds(15.0f);
         isTransparent = false;
-        shield.SetActive(false);
+        shield.SetActive(false);        
     }
 }
