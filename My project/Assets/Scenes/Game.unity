@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0095913, g: 0.023816546, b: 0.055628993, a: 1}
+  m_IndirectSpecularColor: {r: 0.009592626, g: 0.02381732, b: 0.05562292, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 27.705818}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2803,6 +2803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a172b6b884034498ce453f7d56c7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider1: {fileID: 1183328910}
+  slider2: {fileID: 1698765825}
 --- !u!1 &864660869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,14 +3439,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967717573}
-  m_LocalRotation: {x: -0.4801392, y: 0.51005757, z: -0.49092704, w: -0.51797515}
-  m_LocalPosition: {x: 45.5, y: 1.4, z: 0.2}
-  m_LocalScale: {x: 1.6900486, y: 1.6900486, z: 1.6900486}
+  m_LocalRotation: {x: -0.4710541, y: 0.5184597, z: -0.5000005, w: -0.5092221}
+  m_LocalPosition: {x: 44.74, y: 1.44, z: 0.17}
+  m_LocalScale: {x: 2.8483684, y: 1.6900486, z: 1.6900486}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 86.564, y: -71.904, z: 378.26}
+  m_LocalEulerAnglesHint: {x: 86.564, y: -71.904, z: 380.285}
 --- !u!1 &1034009268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6230,6 +6232,7 @@ MonoBehaviour:
   getShield: {fileID: 8300000, guid: f770ba06646a04aa295194b23aae8cb4, type: 3}
   over: {fileID: 8300000, guid: 83789c4397aae4e6fabf6c9152b95476, type: 3}
   count: {fileID: 8300000, guid: 49e5511f5d01241238821d7bf36c52ae, type: 3}
+  audioSource2: {fileID: 0}
   diffic: 0
   currentScale: 0
   interval: 1
@@ -6361,6 +6364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a172b6b884034498ce453f7d56c7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider1: {fileID: 1183328910}
+  slider2: {fileID: 1698765825}
 --- !u!1001 &1958347074
 PrefabInstance:
   m_ObjectHideFlags: 0

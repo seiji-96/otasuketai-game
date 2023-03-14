@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip over;
     public AudioClip count;
     AudioSource audioSource;
-    AudioSource audioSource2;
+    public AudioSource audioSource2;
 
     private bool countS;
     public int diffic;
@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject black;
     public GameObject pause;
+
+    private bool once = true;
 
     private void Start()
     {
@@ -81,9 +83,13 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(count);
             countS = true;
         }
-        if (timerScript.totalTime<=0.5f)
+        if (timerScript.seconds<=0.5f)
         {
-            audioSource2.Play();
+            if (once)
+            {
+                audioSource2.Play();
+                once = false;
+            }
             Vector3 tmp = this.transform.position;
             //Move
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -143,6 +149,7 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale = 0;
                 black.SetActive(true);
                 pause.SetActive(true);
+                this.enabled = false;
             }
 
             if (Input.GetMouseButtonDown(0))

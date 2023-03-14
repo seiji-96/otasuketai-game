@@ -72,7 +72,9 @@ public class Restart : MonoBehaviour
     {
         parent.SetActive(false);
         black.SetActive(false);
-        playerScript.timerScript.totalTime = 3;
+        playerScript.timerScript.totalTime = 4;
         Time.timeScale = playerScript.currentScale;
+        playerScript.enabled = true;
+        playerScript.audioSource2.Play();
     }
 }
