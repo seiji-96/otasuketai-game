@@ -75,6 +75,5 @@ public class Restart : MonoBehaviour
         playerScript.timerScript.totalTime = 4;
         Time.timeScale = playerScript.currentScale;
         playerScript.enabled = true;
-        playerScript.audioSource2.Play();
     }
 }

@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestText;
+    public TextMeshProUGUI ready;
 
     public bool isTransparent = false;
 
@@ -44,6 +45,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip getShield;
     public AudioClip over;
     public AudioClip count;
+    public AudioClip charge;
+    public AudioClip rocket;
     AudioSource audioSource;
     public AudioSource audioSource2;
 
@@ -61,6 +64,10 @@ public class PlayerController : MonoBehaviour
     public GameObject pause;
 
     private bool once = true;
+
+    float duration = 0.6f;
+    Color32 startColor = new Color32(255, 255, 255, 255);
+    Color32 endColor = new Color32(255, 255, 255, 64);
 
     private void Start()
     {
@@ -83,13 +90,14 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(count);
             countS = true;
         }
-        if (timerScript.seconds<=0.5f)
+        if (timerScript.totalTime<=0.5f)
         {
             if (once)
             {
                 audioSource2.Play();
                 once = false;
             }
+        }
             Vector3 tmp = this.transform.position;
             //Move
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -138,7 +146,7 @@ public class PlayerController : MonoBehaviour
                 {
                     inMove = true;
                     StartCoroutine("Rocket");
-                    audioSource.PlayOneShot(jump);
+                    audioSource.PlayOneShot(rocket);
                 }          
             }
 
@@ -150,6 +158,7 @@ public class PlayerController : MonoBehaviour
                 black.SetActive(true);
                 pause.SetActive(true);
                 this.enabled = false;
+                once = true;
             }
 
             if (Input.GetMouseButtonDown(0))
@@ -202,12 +211,21 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine("MoveLeft");        
                 }
             }
-
-        }
     }
 
     void FixedUpdate()
     {
+        if(sushi == 100)
+        {
+            audioSource.PlayOneShot(charge);
+        }
+        if(sushi >= 100)
+        {
+            ready.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
+        }else
+        {
+            ready.color = new Color32(255, 255, 255, 0);
+        }
         if (timerScript.totalTime<=0.5f)
         {
             if(diffic==0)

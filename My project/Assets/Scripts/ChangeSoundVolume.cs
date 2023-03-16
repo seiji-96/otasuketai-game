@@ -19,8 +19,8 @@ public class ChangeSoundVolume : MonoBehaviour
 		audioSource = gameObject.GetComponent<AudioSource>();
 		sound1 = slider1.GetComponent<Slider>();
 		sound2 = slider2.GetComponent<Slider>();
-		sound1.value = PlayerPrefs.GetFloat("Sound", 0.2f);
-		sound2.value = PlayerPrefs.GetFloat("Sound", 0.2f);
+		sound1.value = PlayerPrefs.GetFloat("Sound", 0.5f);
+		sound2.value = PlayerPrefs.GetFloat("Sound", 0.5f);
 	}
 
 	/// <summary>
