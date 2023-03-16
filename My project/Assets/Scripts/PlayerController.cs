@@ -233,28 +233,28 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale = 1f;
                 score += Time.deltaTime * speed * 15 / 3 ;
                 speed += 0.00005f;
-                Time.timeScale += 0.00005f;
+                Time.timeScale += 0.0001f;
             }
             if(diffic==1)
             {
                 Time.timeScale = 2f;
                 score += Time.deltaTime * speed * 15 / 2;
                 speed += 0.0001f;
-                Time.timeScale += 0.0001f;
+                Time.timeScale += 0.0005f;
             }
             if(diffic==2)
             {
                 Time.timeScale = 3f;
                 score += Time.deltaTime * speed * 15;
                 speed += 0.0002f;
-                Time.timeScale += 0.0005f;
+                Time.timeScale += 0.001f;
             }
             if(diffic==3)
             {
                 Time.timeScale = 4f;
                 score += Time.deltaTime * speed * 15 * 2 ;
                 speed += 0.0003f;
-                Time.timeScale += 0.001f;
+                Time.timeScale += 0.05f;
             }
                 
             intScore = (int)score;
